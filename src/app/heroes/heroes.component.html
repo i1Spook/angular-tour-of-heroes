@@ -1,8 +1,13 @@
-<h2>My Heroes</h2>
+<h2>Inventory Monitor</h2>
 
-<div>
-  <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
+<div class="add-device-input">
+  <label for="new-hero">Add Device: </label>
+
+  <input id="new-hero" #heroName placeholder="TODO: heroes.component.html"/> <!-- Make Dropdown + Missing Binding -->
+  <input id="MLFB" placeholder="MLFB"/> <!-- Missing Binding -->
+  <input id="Inventory Number" placeholder="Inventory Number (optional)"/> <!-- Missing Binding -->
+  <input id="Serial Number" placeholder="Serial Number"/> <!-- Missing Binding -->
+  <input id="Protoype-ID" placeholder="Protoype-ID (optional)"/> <!-- Missing Binding -->
 
   <!-- (click) passes input value to add() and then clears the input -->
   <button class="add-button" (click)="add(heroName.value); heroName.value=''">
