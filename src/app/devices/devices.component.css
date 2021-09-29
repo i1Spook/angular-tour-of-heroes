@@ -1,14 +1,19 @@
-/* HeroesComponent's private CSS styles */
-.heroes {
-    margin: 0 0 2em 0;
+/* devicesComponent's private CSS styles */
+.devices {
+    margin: 1em 7em;
     list-style-type: none;
     padding: 0;
     width: 80%;
   }
   
   .add-device-input {
+    margin: 0 5em;
     display: inline-block;
     width: 100%;
+  }
+  .row_value {
+    width: 20%;
+    margin: 1rem 5rem;
   }
 
   /*margin: top right bottom left*/
@@ -20,16 +25,16 @@
     box-sizing: border-box;
   }
   
-  .heroes li {
+  .devices li {
     position: relative;
     cursor: pointer;
   }
   
-  .heroes li:hover {
+  .devices li:hover {
     left: .1em;
   }
   
-  .heroes a {
+  .devices a {
     color: #333;
     text-decoration: none;
     background-color: #EEE;
@@ -41,17 +46,17 @@
     width: 100%;
   }
   
-  .heroes a:hover {
+  .devices a:hover {
     color: #2c3a41;
     background-color: #e6e6e6;
   }
   
-  .heroes a:active {
+  .devices a:active {
     background-color: #525252;
     color: #fafafa;
   }
   
-  .heroes .badge {
+  .devices .badge {
     display: inline-block;
     font-size: small;
     color: white;
@@ -81,7 +86,7 @@
   
   button.delete {
     position: absolute;
-    left: 400px;
+    left: 1480px;
     top: 5px;
     bottom: 5px;
     background-color: white;

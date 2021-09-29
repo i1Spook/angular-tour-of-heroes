@@ -1,0 +1,47 @@
+<h2>Inventory Monitor</h2>
+
+<div class="add-device-input">
+  <label for="new-device">Add Device: </label>
+
+  <select name="Device_Type" id="device-type-select" #deviceType>
+    <option value="">Choose Device Type</option>
+    <option value="PC">PC</option>
+    <option value="PLC">PLC</option>
+    <option value="HMI">HMI</option>
+  </select>
+  <input id="MLFB" placeholder="MLFB" #deviceMLFB/>
+  <input id="Serial Number" placeholder="Serial Number" #deviceSerialNumber/>
+  <input id="Inventory Number" placeholder="Inventory Number (optional)" #deviceInventoryNumber/>
+  <input id="Protoype-ID" placeholder="Protoype-ID (optional)" #devicePrototypeID/>
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="
+  add(deviceType.value, 
+      deviceMLFB.value, 
+      deviceSerialNumber.value, 
+      deviceInventoryNumber.value, 
+      devicePrototypeID.value); 
+      deviceType.value='';
+      deviceMLFB.value='';
+      deviceSerialNumber.value='';
+      deviceInventoryNumber.value='';
+      devicePrototypeID.value='';
+  ">
+    Add Device
+  </button>
+</div>
+
+<ul class="devices">
+  <li *ngFor="let device of devices">
+    <a routerLink="/detail/{{device.internal_id}}">
+      <span class="badge">{{device.internal_id}}</span> 
+      <span class="row_value">{{device.device_type}}</span>
+      <span class="row_value">{{device.mlfb}}</span>
+      <span class="row_value">{{device.serial_number}}</span>
+      <span class="row_value">{{device.inventory_number}}</span>
+      <span class="row_value">{{device.prototype_id}}</span>
+    </a>
+    <button class="delete" title="Delete Entry"
+      (click)="delete(device)">x</button>
+  </li>
+</ul>

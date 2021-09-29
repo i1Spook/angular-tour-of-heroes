@@ -1,0 +1,10 @@
+<div *ngIf="device">
+    <h2>{{device.device_type | uppercase}} Details</h2>
+    <div><span>internal_id: </span>{{device.internal_id}}</div>
+    <div>
+      <label for="device-mlfb">Device name: </label>
+      <input id="device-mlfb" [(ngModel)]="device.mlfb" placeholder="Device MLFB"/>
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+  </div>
